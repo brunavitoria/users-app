@@ -22,3 +22,9 @@ $username = "seu_usuario";  // Nome de usuário do banco de dados
 $password = "sua_senha";    // Senha do banco de dados
 $database = "usersapp";    // Nome do banco de dados do projeto
 ```
+- Inicie o servidor apache através do comando:
+```bash
+sudo service apache2 start
+```
+- Acesse o app através do link: http://localhost/users-app/ (se o projeto estiver na raiz do servidor apache) ou http://localhost/caminho-do-projeto/users-app/ (subistifuindo o "caminho-do-projeto" se o projeto estiver em um subdiretório do servidor apache).
+
