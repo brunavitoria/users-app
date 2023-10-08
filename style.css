@@ -7,3 +7,18 @@ h1 {
 h3 {
     color: #588c7e;
 }
+/* Lista de usuários */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #588c7e;
+    font-family: monospace;
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 10px;
+}
+th {
+    background-color: #588c7e;
+    color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
