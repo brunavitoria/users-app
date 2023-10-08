@@ -1,6 +1,11 @@
 # users-app
 Aplicação em PHP que posibilite a criação de usuários e a exibição da listagem em tempo real à medida que novos usuários vão sendo adicionados ao sistema.
 
+## Dependências
+- PHP 7.4.3
+- MySQL 8.0.23
+- Apache 2.4.46
+
 ## Setup
 - Clone o repositório através do comando:
 ```bash
