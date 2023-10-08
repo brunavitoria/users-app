@@ -2,32 +2,37 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Usuários</title>
+    <title>UsersApp</title>
 </head>
 <body>
-    <table id="tabela-usuarios">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Data de adimissão</th>
-                <th>Data de criação</th>
-                <th>Data de atualização</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>UsersApp</h1>
 
-    <h3>Adicionar novo usuário</h3>
-    <form id="user-form" action="add.php" method="post">
-        <input id="name" type="text" name="name" placeholder="Nome">
-        <input id="email" type="email" name="email" placeholder="Email">
-        <input id="employment_date" type="date" name="employment_date" placeholder="Data de admissão">
-        <input type="submit" value="Adicionar">
-    </form>
-    <span id="mensagem"></span>
+        <h3>Adicionar novo usuário</h3>
+        <form id="user-form" action="add.php" method="post">
+            <input id="name" type="text" name="name" placeholder="Nome">
+            <input id="email" type="email" name="email" placeholder="Email">
+            <input id="employment_date" type="date" name="employment_date" placeholder="Data de admissão">
+            <input type="submit" value="Adicionar">
+        </form>
+        <span id="mensagem"></span>
+
+        <h3>Lista de usuários</h3>
+        <table id="tabela-usuarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Data de adimissão</th>
+                    <th>Data de criação</th>
+                    <th>Data de atualização</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
