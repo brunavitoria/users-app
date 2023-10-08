@@ -1,5 +1,5 @@
 # users-app
-Aplicação em PHP que posibilite a criação de usuários e a exibição da listagem em tempo real à medida que novos usuários vão sendo adicionados ao sistema.
+Aplicação em PHP que possibilite a criação de usuários e a exibição da listagem em tempo real à medida que novos usuários vão sendo adicionados ao sistema.
 
 ## Dependências
 - PHP 7.4.3
