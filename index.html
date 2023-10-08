@@ -27,6 +27,7 @@
         <input id="employment_date" type="date" name="employment_date" placeholder="Data de admissão">
         <input type="submit" value="Adicionar">
     </form>
+    <span id="mensagem"></span>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -79,6 +80,12 @@
                 method: "POST",
                 body: formData
             }).then(response => response.json());
+            const mensagem = document.getElementById("mensagem");
+            mensagem.innerHTML = data;
+            mensagem.style.display = "block";
+            setTimeout(() => {
+                mensagem.style.display = "none";
+            }, 3000);
 
             form.reset();
         });
