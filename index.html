@@ -5,6 +5,39 @@
     <title>Lista de Usuários</title>
 </head>
 <body>
-    <!-- Lista de usuários -->
+    <table id="tabela-usuarios">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Data de adimissão</th>
+                <th>Data de criação</th>
+                <th>Data de atualização</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function atualizarTabela() {
+                $.ajax({
+                    url: 'list.php',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#tabela-usuarios tbody').empty();
+
+                        $.each(data, function (index, usuario) {
+                            $('#tabela-usuarios tbody').append('<tr><td>' + usuario.id + '</td><td>' + usuario.nome + '</td><td>' + usuario.email + '</td><td>' + usuario.data_admissao + '</td><td>' + usuario.data_criacao + '</td><td>' + usuario.data_atualizacao + '</td></tr>');
+                        });
+                    }
+                });
+            }
+            setInterval(atualizarTabela, 5000);
+        });
+    </script>
 </body>
 </html>
