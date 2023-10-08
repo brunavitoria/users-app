@@ -33,3 +33,6 @@ sudo service apache2 start
 - Para criar um novo usuário, clique no botão "Novo Usuário" e preencha os campos "Nome", "E-mail" e "Data de adimissão" e clique no botão "Adicionar".
 - Observe que o novo usuário será adicionado automaticamente à lista de usuários cadastrados (sem a necessidade de atualizar a página).
 
+## Autora
+- [Bruna Vitória] (https://github.com/brunavitoria)
+
