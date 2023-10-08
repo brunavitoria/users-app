@@ -40,7 +40,7 @@ input {
     box-sizing: border-box;
 }
 button {
-    background-color: #4CAF50;
+    background-color: #588c7e;
     color: white;
     padding: 10px 10px;
     margin: 5px 0;
@@ -50,4 +50,10 @@ button {
 }
 button:hover {
     opacity: 0.8;
+}
+
+span {
+    color: #588c7e;
+    font-weight: bold;
+    margin: 5px 0;
 }
