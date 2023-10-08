@@ -28,3 +28,8 @@ sudo service apache2 start
 ```
 - Acesse o app através do link: http://localhost/users-app/ (se o projeto estiver na raiz do servidor apache) ou http://localhost/caminho-do-projeto/users-app/ (subistifuindo o "caminho-do-projeto" se o projeto estiver em um subdiretório do servidor apache).
 
+## Utilização
+- Ao acessar o app, você poderá visualizar os usuários cadastrados e criar novos usuários.
+- Para criar um novo usuário, clique no botão "Novo Usuário" e preencha os campos "Nome", "E-mail" e "Data de adimissão" e clique no botão "Adicionar".
+- Observe que o novo usuário será adicionado automaticamente à lista de usuários cadastrados (sem a necessidade de atualizar a página).
+
