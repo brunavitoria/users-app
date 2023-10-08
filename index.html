@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>UsersApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>UsersApp</h1>
+
+        <h3>Adicionar novo usuário</h3>
+        <form id="user-form" action="add.php" method="post">
+            <input id="name" type="text" name="name" placeholder="Nome">
+            <input id="email" type="email" name="email" placeholder="Email">
+            <input id="employment_date" type="date" name="employment_date" placeholder="Data de admissão">
+            <button type="submit">Adicionar</button>
+        </form>
+        <span id="mensagem"></span>
+
+        <h3>Lista de usuários</h3>
+        <table id="tabela-usuarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Data de adimissão</th>
+                    <th>Data de criação</th>
+                    <th>Data de atualização</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function atualizarTabela() {
+                $.ajax({
+                    url: 'list.php',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#tabela-usuarios tbody').empty();
+
+                        $.each(data, function (index, usuario) {
+                            $('#tabela-usuarios tbody').append('<tr><td>' + usuario.id + '</td><td>' + usuario.nome + '</td><td>' + usuario.email + '</td><td>' + usuario.data_admissao + '</td><td>' + usuario.data_criacao + '</td><td>' + usuario.data_atualizacao + '</td></tr>');
+                        });
+                    }
+                });
+            }
+            setInterval(atualizarTabela, 5000);
+        });
+
+        const form = document.getElementById("user-form");
+
+        form.addEventListener("submit", async event => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const employmentDate = document.getElementById("employment_date").value;
+
+            // Valida os campos
+            if (name.trim() === "") {
+                alert("Nome não pode estar vazio");
+                return;
+            }
+
+            if (email.trim() === "") {
+                alert("Email não pode estar vazio");
+                return;
+            }
+
+            if (employmentDate.trim() === "") {
+                alert("Data de admissão não pode estar vazia");
+                return;
+            }
+
+            // Envia o formulário
+            const formData = new FormData(form);
+            
+            const data = await fetch("add.php", {
+                method: "POST",
+                body: formData
+            }).then(response => response.json());
+            const mensagem = document.getElementById("mensagem");
+            mensagem.innerHTML = data;
+            mensagem.style.display = "block";
+            setTimeout(() => {
+                mensagem.style.display = "none";
+            }, 3000);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
