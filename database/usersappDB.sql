@@ -17,3 +17,8 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+INSERT INTO users (name, email, employment_date)
+VALUES
+    ('Primeiro Usuário', 'usuario1@example.com', DATE(NOW())),
+    ('Segundo Usuário', 'usuario2@example.com', DATE(NOW()));
