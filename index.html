@@ -72,6 +72,15 @@
                 return;
             }
 
+            // Envia o formulário
+            const formData = new FormData(form);
+            
+            const data = await fetch("add.php", {
+                method: "POST",
+                body: formData
+            }).then(response => response.json());
+
+            form.reset();
         });
     </script>
 </body>
