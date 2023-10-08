@@ -20,6 +20,14 @@
         </tbody>
     </table>
 
+    <h3>Adicionar novo usuário</h3>
+    <form id="user-form" action="add.php" method="post">
+        <input id="name" type="text" name="name" placeholder="Nome">
+        <input id="email" type="email" name="email" placeholder="Email">
+        <input id="employment_date" type="date" name="employment_date" placeholder="Data de admissão">
+        <input type="submit" value="Adicionar">
+    </form>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -37,6 +45,33 @@
                 });
             }
             setInterval(atualizarTabela, 5000);
+        });
+
+        const form = document.getElementById("user-form");
+
+        form.addEventListener("submit", async event => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const employmentDate = document.getElementById("employment_date").value;
+
+            // Valida os campos
+            if (name.trim() === "") {
+                alert("Nome não pode estar vazio");
+                return;
+            }
+
+            if (email.trim() === "") {
+                alert("Email não pode estar vazio");
+                return;
+            }
+
+            if (employmentDate.trim() === "") {
+                alert("Data de admissão não pode estar vazia");
+                return;
+            }
+
         });
     </script>
 </body>
